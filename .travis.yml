@@ -39,6 +39,7 @@ install:
     # Activate the test environment
   - conda activate test
     # Build and install package
+  - pip install -e .
   - python setup.py develop --no-deps
 
 
