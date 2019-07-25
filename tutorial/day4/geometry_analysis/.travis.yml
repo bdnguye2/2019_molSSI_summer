@@ -42,7 +42,8 @@ install:
 
 
 script:
-  - pytest -v --cov=geometry_analysis geometry_analysis/tests/
+  - cd lectures/tutorial/day4/geometry_analysis
+  - pytest -v --cov=geometry_analysis source/tests/
 
 notifications:
     email: false
