@@ -22,9 +22,11 @@ def calculate_distance(rA, rB):
     distance : float
         The distance between points A and B.
     
-    Examples
+    Examples: Runs pytest within the measure module
     --------
-    >>> calculate_distance(np.array([0, 0, 0], [0, 0.1, 0]))
+    >>> r1 = np.array([0, 0, 0])
+    >>> r2 = np.array([0, 0.1, 0])
+    >>> calculate_distance(r1,r2)
     0.1
     """
     dist_vec = (rA - rB)
