@@ -1,6 +1,21 @@
 #include <iostream>
 #include <vector>
+#include <string>
 #include "hello_world.hpp"
+
+void print_vector(std::vector<double> & vec)
+// Prints out the elements of the array
+{
+  // First way of writing the loop
+  //for(size_t i = 0; i < vec.size(); i++)
+  // Will work but lead to compiler warning; should be 'size_t i' not 'int i'
+  //  std::cout << "Element " << i << " is " << vec[i] << std::endl;
+  
+  // Range-based for loop similar to python
+  for(double it : vec)
+    std::cout << it << std::endl;
+  vec[0] = 0.000;
+}
 
 int main(void)
 {
@@ -10,8 +25,20 @@ int main(void)
   std::cout << "0th element is " << my_vector.at(0) << std::endl;
 
   std::cout << "1st element is " << my_vector[1] << std::endl;
-  std::cout << "1st element is " << my_vector.at(1) << std::endl;
+  //std::cout << "1st element is " << my_vector.at(1) << std::endl;
+  // Line of code will compiled but the program won't run giving index error
+
+  std::string s = "This is a string";
+  std::cout << "s is " << std::endl;
   
+  std::vector<double> multiples;
+  for(int i = 1; i < 6; i++)
+    {
+      double k = 3.1415 * i;
+      multiples.push_back(k);
+    }
+  print_vector(multiples);
+  std::cout << "0th element: " << multiples[0] << std::endl;
   std::cout << "My vector has " << my_vector.size() << " elements" << std::endl;
   return 0;
 
