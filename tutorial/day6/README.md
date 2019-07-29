@@ -6,7 +6,7 @@
 
     pip install -U pytest-cov
 
-* sphinx: python documentation
+* sphinx: Documenting python program
 
     conda install sphinx sphinx_rtd_theme -c conda-forge 
 
