@@ -1,4 +1,6 @@
 #include <iostream>
+#include <Eigen/Dense>
+#include <vector>
 
 const double zero_k_in_c = 273.15;
 
@@ -36,4 +38,23 @@ void count(int max)
         std::cout << "i is " << i << std::endl;
 }
 
+std::vector<double> f_to_c_vector(std::vector<double> f_vec)
+{// convert all elements of f_vec from fahrenheit to celsius
+  std::vector<double> c_vec;
+  for(auto it : f_vec)
+    c_vec.push_back(f_to_celsius(it));
+  return c_vec;
+}
 
+Eigen::MatrixXd f_to_c_matrix(Eigen::MatrixXd f_mat)
+{ // convert all elements of f_mat to celsius
+  int nrows = f_mat.rows();
+  int ncols = f_mat.cols();
+  Eigen::MatrixXd c_mat(nrows, ncols);
+  for(int i = 0; i < nrows; i++)
+    {
+      for(int j = 0; j < ncols; j++)
+	c_mat(i,j) = f_to_celsius(f_mat(i,j));
+    }
+  return c_mat;
+}

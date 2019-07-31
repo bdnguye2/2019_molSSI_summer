@@ -20,7 +20,8 @@ int main(void)
 
   Eigen::MatrixXd mat2 = mat * mat.transpose();
   
-  std::cout << mat << std::endl;
+  std::cout << mat << std::endl << std::endl;
+  
   std::cout << mat2 << std::endl;
 
   // Matrix multiplication: 2x3 * 3x1 = 2x1
