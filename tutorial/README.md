@@ -6,3 +6,4 @@
 * Day 5: Introduction to C++
 * Day 6: Documentation with Cookiecutter and WebHook; cbinding and cmake
 * Day 7: Parallization with MPI
+* Day 8: Intro to Machine Learning Models and Neural Networks
